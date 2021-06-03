@@ -114,7 +114,16 @@ const App = () => {
           )}
           <div className="grid">
             {itemArray.map((item, index) => (
-              <Card onClick={() => changeItem(index)} color="warning">
+              <Card
+                onClick={() => changeItem(index)}
+                color={
+                  item == "empty"
+                    ? "warning"
+                    : item == "cross"
+                    ? "light"
+                    : "primary"
+                }
+              >
                 <CardBody className="box">
                   <Icon name={item} />
                 </CardBody>
